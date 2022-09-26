@@ -833,6 +833,36 @@ class InterpreterTest extends AnyFunSuite {
 
   }
 
+  test(testName = "Testing bee1038 with INTEGER: Sample Test 1"){
+      val module = ScalaParser.parseResource("stmts/bee1038_Snack_int.oberon")
+
+      assert(module.name == "bee1038int")
+
+      module.accept(interpreter)
+
+      assert(interpreter.env.lookup("value") == Some(IntValue(9)))
+    }
+
+    test(testName = "Testing bee1038 with REAL: Sample Test 1"){
+      val module = ScalaParser.parseResource("stmts/bee1038_Snack_real.oberon")
+
+      assert(module.name == "bee1038real")
+
+      module.accept(interpreter)
+
+      assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
+    }
+
+    test(testName = "Testing altered version of bee1161: Sample Test 1"){
+      val module = ScalaParser.parseResource("stmts/bee1161_NastyHacks_v_alt.oberon")
+
+      assert(module.name == "bee1161valt")
+
+      module.accept(interpreter)
+
+      assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
+    }
+
   def evalArraySubscript(name: String, index: Integer): Expression =
     interpreter.evalExpression(ArraySubscript(VarExpression(name), IntValue(index)))
 }
