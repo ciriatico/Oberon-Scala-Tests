@@ -118,7 +118,7 @@ class Interpreter extends OberonVisitorAdapter {
       case ReadIntStmt(name) =>
         env.setVariable(name, IntValue(StdIn.readLine().toInt))
 
-      case   ReadCharStmt(name) =>
+      case ReadCharStmt(name) =>
         env.setVariable(name, CharValue(StdIn.readLine().charAt(0)))
 
       case WriteStmt(exp) =>

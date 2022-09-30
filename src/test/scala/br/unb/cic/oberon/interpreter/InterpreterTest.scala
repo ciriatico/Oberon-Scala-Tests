@@ -754,9 +754,7 @@ class InterpreterTest extends AnyFunSuite {
     assert(evalArraySubscript("banknotesNeeded", 8) == IntValue(0))
     assert(evalArraySubscript("banknotesNeeded", 9) == IntValue(2))
     assert(evalArraySubscript("banknotesNeeded", 10) == IntValue(0))
-    // Due to float imprecision, don't check the cents' value
-    assert(IntValue(3) == evalArraySubscript("banknotesNeeded", 11))
-    //assert(evalArraySubscript("banknotesNeeded", 11) == IntValue(3))
+    assert(evalArraySubscript("banknotesNeeded", 11) == IntValue(3))
 
   }
 
@@ -819,49 +817,57 @@ class InterpreterTest extends AnyFunSuite {
 
     assert(interpreter.env.lookup("answer") == Some(IntValue(0)))
   }
+  
+  test(testName = "Testing bee1038 with INTEGER: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_int.oberon")
 
-  test("BeeAnimal test of procedure") {
-    val module = ScalaParser.parseResource("stmts/BeeAnimal.oberon")
-
-    assert(module.stmt.isDefined)
-
-    assert(module.name == "BeeAnimal")
+    assert(module.name == "bee1038int")
 
     module.accept(interpreter)
 
-    assert(interpreter.env.lookup("classifiedAnimal") == Some(StringValue("homem")))
-
+    assert(interpreter.env.lookup("value") == Some(IntValue(9)))
   }
 
-  test(testName = "Testing bee1038 with INTEGER: Sample Test 1"){
-      val module = ScalaParser.parseResource("stmts/bee1038_Snack_int.oberon")
+  test(testName = "Testing bee1038 with REAL: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_real.oberon")
 
-      assert(module.name == "bee1038int")
+    assert(module.name == "bee1038real")
 
-      module.accept(interpreter)
+    module.accept(interpreter)
 
-      assert(interpreter.env.lookup("value") == Some(IntValue(9)))
-    }
+    assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
+  }
 
-    test(testName = "Testing bee1038 with REAL: Sample Test 1"){
-      val module = ScalaParser.parseResource("stmts/bee1038_Snack_real.oberon")
+  test(testName = "Testing altered version of bee1161: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1161_NastyHacks_v_alt.oberon")
 
-      assert(module.name == "bee1038real")
+    assert(module.name == "bee1161valt")
 
-      module.accept(interpreter)
+    module.accept(interpreter)
 
-      assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
-    }
+    assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
+  }
 
-    test(testName = "Testing altered version of bee1161: Sample Test 1"){
-      val module = ScalaParser.parseResource("stmts/bee1161_NastyHacks_v_alt.oberon")
+  test("BeeCrowd test of INTEGER banknotes with (User Input)") {
+    val module = ScalaParser.parseResource("stmts/BeeBanknoteIntUser.oberon")
 
-      assert(module.name == "bee1161valt")
+    assert(module.stmt.isDefined)
 
-      module.accept(interpreter)
+    assert(module.name == "BeeBanknoteIntUser")
 
-      assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
-    }
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("i") == Some(IntValue(7)))
+
+    assert(evalArraySubscript("banknotesNeeded", 0) == IntValue(5))
+    assert(evalArraySubscript("banknotesNeeded", 1) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 2) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 3) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 4) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 5) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 6) == IntValue(1))
+
+  }
 
   def evalArraySubscript(name: String, index: Integer): Expression =
     interpreter.evalExpression(ArraySubscript(VarExpression(name), IntValue(index)))

@@ -32,7 +32,7 @@ BEGIN
 		banknotesNeeded[i] := FLOOR(value/v);
 		value := value - v*banknotesNeeded[i];
 		INC(i)
-	END;
+	END
 END
 
 END BeeBanknoteReal.
