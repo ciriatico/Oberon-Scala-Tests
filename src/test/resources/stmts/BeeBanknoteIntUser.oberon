@@ -1,4 +1,4 @@
-MODULE BeeBanknoteInt;
+MODULE BeeBanknoteIntUser;
 
 
 TYPE
@@ -6,14 +6,19 @@ TYPE
 
 VAR
 	banknotesValues, banknotesNeeded: intArray;
-	value: INTEGER;
+	value, valueUserInt1, valueUserInt2: INTEGER;
+	valueUser: STRING;
 	i, v: INTEGER;
 
 BEGIN
 	value := 576.73;
 	i := 0;
 
-	banknotesValues[0] := 100;
+	valueUser := READFILE("src\test\resources\userInput\beecrowdint");
+	
+	valueUserInt1 := STRINGTOINT(valueUser);
+	
+	banknotesValues[0] := valueUserInt1;
 	banknotesValues[1] := 50;
 	banknotesValues[2] := 20;
 	banknotesValues[3] := 10;

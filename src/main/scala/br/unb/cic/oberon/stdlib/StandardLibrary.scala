@@ -8,6 +8,8 @@ import java.io.{FileOutputStream, FileWriter, PrintWriter}
 import java.nio.charset.StandardCharsets
 import java.nio.file.{Files, Paths}
 import scala.collection.mutable.Map
+import scala.collection.mutable.ListBuffer._
+
 
 class StandardLibrary[T](env: Environment[T]) {
 
@@ -22,7 +24,7 @@ class StandardLibrary[T](env: Environment[T]) {
   }
 
   val stdlib = OberonModule("STDLIB", Set.empty[String], List(), List(), List(),
-    List(inc, dec, abs, odd, ceil, floor, round, intToFloat, power, sqrroot, ceil, readFile, writeFile, appendFile), None)
+    List(inc, dec, abs, odd, ceil, floor, round, intToFloat, power, sqrroot, ceil, readFile, writeFile, appendFile, stringToInt, stringToFloat), None)
 
   def inc = Procedure(
     "INC",
@@ -147,9 +149,23 @@ class StandardLibrary[T](env: Environment[T]) {
     List(),
     SequenceStmt(
       List(MetaStmt(() => ReturnStmt(StringValue(readf(env.lookup(name = "x").get.asInstanceOf[StringValue].value)))))
+      
     )
   )
 
+  /* Tentnativa de função que retorne um array de Inteiros, 
+  def listInt = Procedure(
+    "LISTINT",
+    List(ParameterByValue("x",StringType)),
+    Some(ArrayType(2, StringType)),
+    List(),
+    List(),
+    SequenceStmt(
+      List(MetaStmt(() => ReturnStmt(ArrayValue(Value, ArrayType(2, StringType))(readf(env.lookup(name = "x").get.asInstanceOf[StringValue].value   )))))
+      
+    )
+  )
+  */
   //  def writeFile = Procedure(
   //    "WRITEFILE",                       // name
   //    List(FormalArg("FILENAME", StringType), FormalArg("CONTENT", StringType)), // arguments
@@ -208,6 +224,28 @@ class StandardLibrary[T](env: Environment[T]) {
     List(),                            // local variables
 
     MetaStmt(() => ReturnStmt(StringValue(appendF(env.lookup(name = "PATH").get.asInstanceOf[StringValue].value, env.lookup(name = "CONTENT").get.asInstanceOf[StringValue].value))))
+  )
+  
+  def stringToInt = Procedure(
+    "STRINGTOINT",
+    List(ParameterByValue("x", StringType)),
+    Some(IntegerType),
+    List(),
+    List(),
+
+    SequenceStmt(
+      List(MetaStmt(() => ReturnStmt(IntValue(env.lookup(name = "x").get.asInstanceOf[StringValue].value.toInt)))))
+  )
+
+  def stringToFloat = Procedure(
+    "STRINGTOREAL",
+    List(ParameterByValue("x", StringType)),
+    Some(RealType),
+    List(),
+    List(),
+
+    SequenceStmt(
+      List(MetaStmt(() => ReturnStmt(RealValue(env.lookup(name = "x").get.asInstanceOf[StringValue].value.toFloat)))))
   )
 
 }

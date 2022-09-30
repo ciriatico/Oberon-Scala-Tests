@@ -817,6 +817,57 @@ class InterpreterTest extends AnyFunSuite {
 
     assert(interpreter.env.lookup("answer") == Some(IntValue(0)))
   }
+  
+  test(testName = "Testing bee1038 with INTEGER: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_int.oberon")
+
+    assert(module.name == "bee1038int")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("value") == Some(IntValue(9)))
+  }
+
+  test(testName = "Testing bee1038 with REAL: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_real.oberon")
+
+    assert(module.name == "bee1038real")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
+  }
+
+  test(testName = "Testing altered version of bee1161: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1161_NastyHacks_v_alt.oberon")
+
+    assert(module.name == "bee1161valt")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
+  }
+
+  test("BeeCrowd test of INTEGER banknotes with (User Input)") {
+    val module = ScalaParser.parseResource("stmts/BeeBanknoteIntUser.oberon")
+
+    assert(module.stmt.isDefined)
+
+    assert(module.name == "BeeBanknoteIntUser")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("i") == Some(IntValue(7)))
+
+    assert(evalArraySubscript("banknotesNeeded", 0) == IntValue(5))
+    assert(evalArraySubscript("banknotesNeeded", 1) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 2) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 3) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 4) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 5) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 6) == IntValue(1))
+
+  }
 
   def evalArraySubscript(name: String, index: Integer): Expression =
     interpreter.evalExpression(ArraySubscript(VarExpression(name), IntValue(index)))
