@@ -959,21 +959,6 @@ class InterpreterTest extends AnyFunSuite {
       
     }  
 
-
-
-  test(testName = "Beecrownd test of Time Zone 2057"){
-      val module = ScalaParser.parseResource("stmts/Bee2057_TimeZone.oberon")
-
-      val coreVisitor = new CoreVisitor()
-      val coreModule = coreVisitor.transformModule(module)
-
-      assert(module.name == "bee2057Time")
-
-      coreModule.accept(interpreter)
-
-      assert(interpreter.env.lookup("ans") == Some(IntValue(2)))
-      
-    }  
   
   def evalArraySubscript(name: String, index: Integer): Expression =
     interpreter.evalExpression(ArraySubscript(VarExpression(name), IntValue(index)))
