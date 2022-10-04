@@ -838,16 +838,6 @@ class InterpreterTest extends AnyFunSuite {
     assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
   }
 
-  test(testName = "Testing altered version of bee1161: Sample Test 1"){
-    val module = ScalaParser.parseResource("stmts/bee1161_NastyHacks_v_alt.oberon")
-
-    assert(module.name == "bee1161valt")
-
-    module.accept(interpreter)
-
-    assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
-  }
-
   test("BeeCrowd test of INTEGER banknotes with (User Input)") {
     val module = ScalaParser.parseResource("stmts/BeeBanknoteIntUser.oberon")
 
@@ -868,7 +858,123 @@ class InterpreterTest extends AnyFunSuite {
     assert(evalArraySubscript("banknotesNeeded", 6) == IntValue(1))
 
   }
+  
+    test(testName = "Testing altered version of bee3205: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee3205_NastyHacks_v_alt.oberon")
 
+    assert(module.name == "bee3205valt")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
+  }
+  
+  test(testName = "Testing bee1061: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1061_EventTime.oberon")
+
+    assert(module.name == "bee1061EventTime")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("dt") == Some(IntValue(4)))
+    assert(interpreter.env.lookup("ht") == Some(IntValue(2)))
+    assert(interpreter.env.lookup("mt") == Some(IntValue(58)))
+    assert(interpreter.env.lookup("st") == Some(IntValue(27)))
+  }
+
+  test(testName = "Testing bee2221: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee2221_PokemonsBattle.oberon")
+
+    assert(module.name == "bee2221pok")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("ansa") == Some(IntValue(23)))
+    assert(interpreter.env.lookup("ansb") == Some(IntValue(27)))
+    assert(interpreter.env.lookup("anst") == Some(IntValue(2)))
+  }
+  
+  test(testName = "Beecrownd test of Simple Sort 1042"){
+      val module = ScalaParser.parseResource("stmts/Bee1042_SimpleSort.oberon")
+
+      val coreVisitor = new CoreVisitor()
+      val coreModule = coreVisitor.transformModule(module)
+
+      assert(module.name == "bee1042Sort")
+
+      coreModule.accept(interpreter)
+
+      assert(evalArraySubscript("ans", 0) == IntValue(-14))
+      assert(evalArraySubscript("ans", 1) == IntValue(7))
+      assert(evalArraySubscript("ans", 2) == IntValue(21))
+      assert(evalArraySubscript("ans", 3) == IntValue(7))
+      assert(evalArraySubscript("ans", 4) == IntValue(21))
+      assert(evalArraySubscript("ans", 5) == IntValue(-14))
+      
+    }  
+
+
+  test(testName = "Beecrownd test of Sum of Consecutive Odd Numbers I 1071"){
+      val module = ScalaParser.parseResource("stmts/Bee1071_Sum.oberon")
+
+      val coreVisitor = new CoreVisitor()
+      val coreModule = coreVisitor.transformModule(module)
+
+      assert(module.name == "bee1071Sum")
+
+      coreModule.accept(interpreter)
+
+      assert(interpreter.env.lookup("ans") == Some(IntValue(13)))
+      
+    }  
+
+  test(testName = "Beecrownd test of Sum of Positive Numbers 1060"){
+      val module = ScalaParser.parseResource("stmts/Bee1060_Positive.oberon")
+
+      val coreVisitor = new CoreVisitor()
+      val coreModule = coreVisitor.transformModule(module)
+
+      assert(module.name == "bee1060Positive")
+
+      coreModule.accept(interpreter)
+
+      assert(interpreter.env.lookup("ans") == Some(IntValue(4)))
+      
+    }  
+
+
+  test(testName = "Beecrownd test of Weighted Averages 1079"){
+      val module = ScalaParser.parseResource("stmts/Bee1079_Average.oberon")
+
+      val coreVisitor = new CoreVisitor()
+      val coreModule = coreVisitor.transformModule(module)
+
+      assert(module.name == "bee1079Average")
+
+      coreModule.accept(interpreter)
+
+      assert(evalArraySubscript("ans", 0) == RealValue(5.689999961853028))
+      assert(evalArraySubscript("ans", 1) == RealValue(6.330000114440918))
+      assert(evalArraySubscript("ans", 2) == RealValue(9.3))
+      
+    }  
+
+
+
+  test(testName = "Beecrownd test of Time Zone 2057"){
+      val module = ScalaParser.parseResource("stmts/Bee2057_TimeZone.oberon")
+
+      val coreVisitor = new CoreVisitor()
+      val coreModule = coreVisitor.transformModule(module)
+
+      assert(module.name == "bee2057Time")
+
+      coreModule.accept(interpreter)
+
+      assert(interpreter.env.lookup("ans") == Some(IntValue(2)))
+      
+    }  
+  
   def evalArraySubscript(name: String, index: Integer): Expression =
     interpreter.evalExpression(ArraySubscript(VarExpression(name), IntValue(index)))
 }
