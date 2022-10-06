@@ -152,11 +152,13 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
     </ul>
 	<li><b><a href="./bee1038int.md">bee1038</a>: Snack (Inteiros)</b></li>
     <ul>
-	    <li>Manipulação de arrays de inteiros</li>
+	    <li>Inicialização de arrays</li>
+	    <li>Aritmética com arrays de inteiros</li>
     </ul>
 	<li><b><a href="./bee1038real.md">bee1038</a>: Snack (Reais)</b></li>
     <ul>
-	    <li>Manipulação de arrays de reais</li>
+	    <li>Inicialização de arrays</li>
+	    <li>Aritmética com arrays de reais</li>
     </ul>
 	<li><b><a href="./bee1042.md">bee1042</a>: Simple Sort</b></li>
     <ul>
