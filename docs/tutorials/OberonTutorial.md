@@ -120,7 +120,7 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
 <ul>
 	<li><b><a href="./bee1013.md">bee1013</a>: O Maior</b></li>
     <ul>
-	    <li>Procedures</li>
+	    <li>Procedure</li>
     </ul>
 	<li><b><a href="./bee1018.md">bee1018</a>: Cédulas</b></li>
     <ul>
