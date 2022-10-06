@@ -63,21 +63,28 @@ END
 END bee1038real.
 ```
 
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+  test(testName = "Testing bee1038 with REAL: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_real.oberon")
+
+    assert(module.name == "bee1038real")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
 ### Inicialização de arrays de real
 
-<b>Arrays</b> precisam ter seu tipo declarado antes de serem inicializados. Para tanto, é necessário utilizar a sintaxe <i>typeName = ARRAY X OF Y</i>, onde typeName é o nome do tipo, X é a quantidade de elementos no array e Y é o tipo dos elementos.
-
-```
-TYPE
-	realArray = ARRAY 5 OF REAL
-```
-Com o tipo definido, o array pode ser inicializado partindo do tipo typeName.
-
-```
-VAR
-	banknotesValues: realArray;
-```
+Documentação já feita no teste [bee1018](bee1018.md#arrays).
 
 ### Aritmética com array de real
 
