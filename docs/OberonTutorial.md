@@ -5,6 +5,8 @@
 <b>Funcionalidades implementadas até a criação deste tutorial:</b> INC, DEC, ABS, ODD, CEIL, 
 FLOOR, ROUND, INTTOFLOAT, POWER, SQRROOT, CEIL, READFILE, WRITEFILE, APPENDFILE, STRINGTOINT, STRINGTOFLOAT.
 
+<b>Link para um vídeo explicativo(inglês)<b>: https://www.youtube.com/watch?v=IyYRzpxJaaE
+
 ## Código Exemplo
 
 ```
