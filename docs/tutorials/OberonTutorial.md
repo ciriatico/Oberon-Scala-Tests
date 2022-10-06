@@ -121,11 +121,107 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
 (Como subitens estão as funcionalidades testadas em cada teste.)
 
 <ul>
-	<li><a href="./bee1013.md" target="_blank">bee1013</a>: O Maior</li>
+	<li><b><a href="./bee1013.md">bee1013</a>: O Maior</b></li>
     <ul>
-      <li>Procedures</li>
+	    <li>Procedures</li>
     </ul>
-  <li>bee1018: Cédulas</li>
-  <li>bee1018user: Cédulas (User Input)</li>
-  <li>bee1021: Notas e Moedas</li>
+	<li><b><a href="./bee1018.md">bee1018</a>: Cédulas</b></li>
+    <ul>
+	    <li>FOREACH</li>
+	    <li>Inicialização de arrays</li>
+	    <li>FLOOR</li>
+	    <li>INC</li>
+    </ul>
+	<li><b><a href="./bee1018user.md">bee1018user</a>: Cédulas (User Input)</b></li>
+    <ul>
+	    <li>Todas do bee1018</li>
+	    <li>READFILE</li>
+	    <li>STRINGTOINT</li>
+    </ul>
+	<li><b><a href="./bee1021.md">bee1021</a>: Notas e Moedas</b></li>
+    <ul>
+	    <li>FOREACH</li>
+	    <li>Inicialização de arrays</li>
+	    <li>FLOOR</li>
+	    <li>INC</li>
+    </ul>
+	<li><b><a href="./bee1029.md">bee1029</a>: Fibonacci, Quantas Chamadas?</b></li>
+    <ul>
+	    <li>Procedure</li>
+	    <li>FOR</li>
+	    <li>Comparador de igualdade</li>
+	    <li>Inicialização de arrays</li>
+    </ul>
+	<li><b><a href="./bee1038int.md">bee1038</a>: Snack (Inteiros)</b></li>
+    <ul>
+	    <li>Manipulação de arrays de inteiros</li>
+    </ul>
+	<li><b><a href="./bee1038real.md">bee1038</a>: Snack (Reais)</b></li>
+    <ul>
+	    <li>Manipulação de arrays de reais</li>
+    </ul>
+	<li><b><a href="./bee1042.md">bee1042</a>: Simple Sort</b></li>
+    <ul>
+	    <li>FOREACH</li>
+    </ul>
+	<li><b><a href="./bee1049.md">bee1049</a>: Animal</b></li>
+    <ul>
+	    <li>IF/THEN</li>
+	    <li>Comparador de igualdade</li>
+	    <li>Procedure</li>
+    </ul>
+	<li><b><a href="./bee1060.md">bee1060</a>: Positive</b></li>
+    <ul>
+	    <li>FOREACH</li>
+    </ul>
+	<li><b><a href="./bee1061.md">bee1061</a>: Event Time</b></li>
+    <ul>
+	    <li>IF/THEN</li>
+    </ul>
+	<li><b><a href="./bee1071.md">bee1071</a>: Sum</b></li>
+    <ul>
+	    <li>REPEAT</li>
+    </ul>
+	<li><b><a href="./bee1079.md">bee1079</a>: Average</b></li>
+    <ul>
+	    <li>REPEAT</li>
+    </ul>
+	<li><b><a href="./bee2057.md">bee2057</a>: Fuso Horário</b></li>
+    <ul>
+	    <li>FOREACH</li>
+	    <li>Inicialização de arrays</li>
+	    <li>MOD</li>
+    </ul>
+	<li><b><a href="./bee2221.md">bee2221</a>: Pokemons Battle</b></li>
+    <ul>
+	    <li>IF/THEN</li>
+	    <li>ODD</li>
+    </ul>
+	<li><b><a href="./bee2779.md">bee2779</a>: Álbum da Copa</b></li>
+    <ul>
+	    <li>FOREACH</li>
+	    <li>Inicialização de arrays</li>
+	    <li>IF/THEN</li>
+    </ul>
+	<li><b><a href="./bee3205valt.md">bee3205valt</a>: Nasty Hacks (versão alterada)</b></li>
+    <ul>
+	    <li>FOREACH</li>
+	    <li>Inicialização de arrays</li>
+	    <li>FLOOR</li>
+	    <li>INC</li>
+    </ul>
+	<li><b><a href="./stringToInt.md">Nova função</a>: stringToInt</b></li>
+    <ul>
+	    <li>STRINGTOINT</li>
+    </ul>
+	<li><b><a href="./stringToReal.md">Nova função</a>: stringToReal</b></li>
+    <ul>
+	    <li>STRINGTOREAL</li>
+    </ul>
+	<li><b><a href="./stringToReal.md">User Input</b></li>
+    <ul>
+	    <li>READFILE</li>
+	    <li>STRINGTOINT</li>
+	    <li>STRINGTOREAL</li>
+    </ul>
 </ul> 
