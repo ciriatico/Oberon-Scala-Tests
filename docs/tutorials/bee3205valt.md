@@ -80,21 +80,33 @@ END
 END bee3205valt.
 ```
 
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+    test(testName = "Testing altered version of bee3205: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee3205_NastyHacks_v_alt.oberon")
+
+    assert(module.name == "bee3205valt")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("answer") == Some(IntValue(-20)))
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
 ### Inicialização de arrays
 
-<b>Arrays</b> precisam ter seu tipo declarado antes de serem inicializados. Para tanto, é necessário utilizar a sintaxe ARRAY X OF Y</i>, onde X é a quantidade de elementos no array e Y é o tipo dos elementos.
-
-```
-VAR
-    a : ARRAY 3 OF INTEGER;
-    b : ARRAY 3 OF INTEGER;
-    c : ARRAY 3 OF INTEGER;
-    ans : ARRAY 3 OF INTEGER;
-```
+Documentação já feita no teste [bee1018](bee1018.md#arrays).
 
 ### forEach
 
+Documentação já feita no teste [bee1018](bee1018.md#foreach).
+
 ### INC
 
-### Aritmética com array
+Documentação já feita no teste [bee1018](bee1018.md#inc).
