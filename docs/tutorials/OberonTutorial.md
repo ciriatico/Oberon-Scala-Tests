@@ -5,7 +5,9 @@
 <b>Funcionalidades implementadas até a criação deste tutorial:</b> INC, DEC, ABS, ODD, CEIL, 
 FLOOR, ROUND, INTTOFLOAT, POWER, SQRROOT, CEIL, READFILE, WRITEFILE, APPENDFILE, STRINGTOINT, STRINGTOFLOAT.
 
-<b>Link para um vídeo explicativo(inglês)<b>: https://www.youtube.com/watch?v=IyYRzpxJaaE
+<b>Documentação oficial da linguagem:</b> https://people.inf.ethz.ch/wirth/Oberon/Oberon07.Report.pdf
+
+<b>Vídeo-tutorial de introdução a Oberon (inglês)</b>: https://www.youtube.com/watch?v=IyYRzpxJaaE
 
 ## Código Exemplo
 
@@ -112,5 +114,18 @@ pode possuir ```;``` no final, como se pode ver no Código-exemplo acima.
 
 ```STRINGTOREAL(x)``` Função que tranforma um valor STRING em um valor FLOAT. Exemplo: STRINGTOREALTest.
 
+## Testes feitos
 
+Lista de testes unitários feitos e documentados em forma de tutorial da linguagem Oberon.
 
+(Como subitens estão as funcionalidades testadas em cada teste.)
+
+<ul>
+	<li><a href="/bee1013.md" target="_blank">bee1013</a>: O Maior</li>
+    <ul>
+      <li>Procedures</li>
+    </ul>
+  <li>bee1018: Cédulas</li>
+  <li>bee1018user: Cédulas (User Input)</li>
+  <li>bee1021: Notas e Moedas</li>
+</ul> 
