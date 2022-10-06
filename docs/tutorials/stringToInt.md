@@ -31,6 +31,26 @@ END
 END STRINGTOINTTest.
 ```
 
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+   test(testName = "Test for the STRINGTOINT function"){
+    val module = ScalaParser.parseResource("stdlib/STRINGTOINTTest.oberon")
+
+    assert(module.name == "STRINGTOINTTest")
+
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("y") == Some(IntValue(-8)))
+    assert(interpreter.env.lookup("z") == Some(IntValue(2)))
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
 ### stringToInt
 
