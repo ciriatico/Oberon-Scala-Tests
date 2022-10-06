@@ -3,7 +3,7 @@
 
 <b>Objetivo:</b> Tranformar um valor String em um valor Integer.
 
-<b>Funcionalidades usadas:</b> ReturnStmt, Procedure, ParameterByValue, MetaStmt, Lits. Implementado em Scala.
+<b>Funcionalidades usadas:</b> stringToInt.
 
 ## Descrição do problema
 
