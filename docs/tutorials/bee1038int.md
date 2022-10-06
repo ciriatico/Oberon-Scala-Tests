@@ -63,21 +63,28 @@ END
 END bee1038int.
 ```
 
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+  test(testName = "Testing bee1038 with INTEGER: Sample Test 1"){
+    val module = ScalaParser.parseResource("stmts/bee1038_Snack_int.oberon")
+
+    assert(module.name == "bee1038int")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("value") == Some(IntValue(9)))
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
 ### Inicialização de arrays de inteiro
 
-<b>Arrays</b> precisam ter seu tipo declarado antes de serem inicializados. Para tanto, é necessário utilizar a sintaxe <i>typeName = ARRAY X OF Y</i>, onde typeName é o nome do tipo, X é a quantidade de elementos no array e Y é o tipo dos elementos.
-
-```
-TYPE
-	intArray = ARRAY 5 OF INTEGER
-```
-Com o tipo definido, o array pode ser inicializado partindo do tipo typeName.
-
-```
-VAR
-	banknotesValues: intArray;
-```
+Documentação já feita no teste [bee1018](bee1018.md#arrays).
 
 ### Aritmética com array de inteiro
 
