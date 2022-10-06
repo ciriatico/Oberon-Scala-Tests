@@ -121,7 +121,7 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
 (Como subitens estão as funcionalidades testadas em cada teste.)
 
 <ul>
-	<li><a href="/bee1013.md" target="_blank">bee1013</a>: O Maior</li>
+	<li><a href="./bee1013.md" target="_blank">bee1013</a>: O Maior</li>
     <ul>
       <li>Procedures</li>
     </ul>
