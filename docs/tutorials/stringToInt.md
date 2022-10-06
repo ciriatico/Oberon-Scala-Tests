@@ -54,4 +54,4 @@ END STRINGTOINTTest.
 ## Funcionalidades testadas
 ### stringToInt
 
-Função em Oberon, implementado em Scala, que retorna um Integer a partir de uma String.
+Documentação já feita no teste [bee1049](bee1018user.md#stringtoint).
