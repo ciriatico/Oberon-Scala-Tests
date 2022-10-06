@@ -166,7 +166,7 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
     </ul>
 	<li><b><a href="./bee1049.md">bee1049</a>: Animal</b></li>
     <ul>
-	    <li>IF/THEN</li>
+	    <li>IF/ELSE</li>
 	    <li>Comparador de igualdade</li>
 	    <li>Procedure</li>
     </ul>
@@ -176,7 +176,7 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
     </ul>
 	<li><b><a href="./bee1061.md">bee1061</a>: Event Time</b></li>
     <ul>
-	    <li>IF/THEN</li>
+	    <li>IF/ELSE</li>
     </ul>
 	<li><b><a href="./bee1071.md">bee1071</a>: Sum</b></li>
     <ul>
@@ -194,14 +194,14 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
     </ul>
 	<li><b><a href="./bee2221.md">bee2221</a>: Pokemons Battle</b></li>
     <ul>
-	    <li>IF/THEN</li>
+	    <li>IF/ELSE</li>
 	    <li>ODD</li>
     </ul>
 	<li><b><a href="./bee2779.md">bee2779</a>: Álbum da Copa</b></li>
     <ul>
 	    <li>FOREACH</li>
 	    <li>Inicialização de arrays</li>
-	    <li>IF/THEN</li>
+	    <li>IF/ELSE</li>
     </ul>
 	<li><b><a href="./bee3205valt.md">bee3205valt</a>: Nasty Hacks (versão alterada)</b></li>
     <ul>
