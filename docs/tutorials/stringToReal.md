@@ -1,9 +1,9 @@
-# Teste stringToInt
+# Teste stringToReal
 <b>Situação:</b> Sucesso
 
 <b>Objetivo:</b> Tranformar um valor String em um valor Real.
 
-<b>Funcionalidades usadas:</b> ReturnStmt, Procedure, ParameterByValue, MetaStmt, Lits. Implementado em Scala.
+<b>Funcionalidades usadas:</b> stringToReal.
 
 ## Descrição do problema
 
@@ -31,7 +31,29 @@ END
 END STRINGTOINTTest.
 ```
 
+
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+  test(testName = "Test for the STRINGTOREAL function"){
+    val module = ScalaParser.parseResource("stdlib/STRINGTOREALTest.oberon")
+
+    assert(module.name == "STRINGTOREALTest")
+
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("y") == Some(RealValue(-8.0)))
+    assert(interpreter.env.lookup("z") == Some(RealValue(2.5)))
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
+<a name="stringtoreal"></a>
 ### STRINGTOREAL
 
 Função em Oberon, implementado em Scala, que retorna um Real a partir de uma String.
