@@ -1,4 +1,4 @@
-# Teste bee1018: Cédulas com user input
+# Teste bee1018: Cédulas com User Input
 <b>Situação:</b> Sucesso
 
 <b>Objetivo:</b> Testar forEach com valor inteiro lido com READFILE() em um arquivo .txt.
@@ -80,52 +80,49 @@ END
 END BeeBanknoteInt.
 ```
 
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
+  test("BeeCrowd test of INTEGER banknotes with (User Input)") {
+    val module = ScalaParser.parseResource("stmts/BeeBanknoteIntUser.oberon")
+
+    assert(module.stmt.isDefined)
+
+    assert(module.name == "BeeBanknoteIntUser")
+
+    module.accept(interpreter)
+
+    assert(interpreter.env.lookup("i") == Some(IntValue(7)))
+
+    assert(evalArraySubscript("banknotesNeeded", 0) == IntValue(5))
+    assert(evalArraySubscript("banknotesNeeded", 1) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 2) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 3) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 4) == IntValue(1))
+    assert(evalArraySubscript("banknotesNeeded", 5) == IntValue(0))
+    assert(evalArraySubscript("banknotesNeeded", 6) == IntValue(1))
+
+  }
+</code>
+</pre>
+</details>
+
 ## Funcionalidades testadas
 ### Inicialização de arrays
-
-<b>Arrays</b> precisam ter seu tipo declarado antes de serem inicializados. Para tanto, é necessário utilizar a sintaxe <i>typeName = ARRAY X OF Y</i>, onde typeName é o nome do tipo, X é a quantidade de elementos no array e Y é o tipo dos elementos.
-
-```
-TYPE
-	intArray = ARRAY 7 OF INTEGER
-```
-Com o tipo definido, o array pode ser inicializado partindo do tipo typeName.
-
-```
-VAR
-	banknotesValues, banknotesNeeded: intArray;
-```
+Documentação já feita no teste [bee1018](bee1018.md#arrays).
 
 ### forEach
-
-É um tipo especial de loop <b>for</b>, onde uma variável tem seu valor associado a cada um dos valores de um array, iterativamente. Observe que a variável que itera (v, no código-exemplo) também precisa ser declarada.
-
-```
-	FOREACH v IN banknotesValues
-		banknotesNeeded[i] := FLOOR(value/v);
-		value := value - v*banknotesNeeded[i];
-		INC(i)
-	END
-```
-
-O fim do loop é definido pelo termo END.
+Documentação já feita no teste [bee1018](bee1018.md#foreach).
 
 ### FLOOR
-
-É um procedimento básico da linguagem, que permite fazer a conversão de número real para inteiro, fazendo a aproximação para o menor número (1.8 se torna 1, por exemplo).
-
-```
-		banknotesNeeded[i] := FLOOR(value/v);
-```
+Documentação já feita no teste [bee1018](bee1018.md#floor).
 
 ### INC
+Documentação já feita no teste [bee1018](bee1018.md#inc).
 
-É um procedimento básico da linguagem, que incrementa uma variável inteira. É bastante útil para ser usada em loops, em especial no forLoop, onde não foi definida uma variável padrão que retorna o número da iteração sendo realizada.
-
-```
-		INC(i)
-```
-
+<a name="readfile"></a>
 ### READFILE
 
 É um procedimento básico que lê a partir de um .txt e retorna uma String.
@@ -134,6 +131,7 @@ O fim do loop é definido pelo termo END.
 		valueUser := READFILE("src\test\resources\userInput\beecrowdint");
 ```
 
+<a name="stringtoint"></a>
 ### STRINGTOINT
 
 É um procedimento básico que tranforma uma String em Integer.
