@@ -42,7 +42,7 @@ END
 END BeeBanknoteInt.
 ```
 
-## Como implementar um algoritmo em Oberon
+## Como programar em Oberon
 
 ### MODULE
 
@@ -79,7 +79,7 @@ Os dois procedimentos ```BEGIN``` e ```END```. começam e finalizam o algoritmo,
 também é utilizado para finalizar expressões como o ```FOR EACH```. Note que a expressão ou variavel que vier antes do ```END``` não
 pode possuir ```;``` no final, como se pode ver no Código-exemplo acima.
 
-## Funções em Oberon atuais
+## Funções nativas em Oberon
 
 ```INC(x)``` Função que incrementa em 1 a variavél escolhida. Exemplo: BeeBanknoteIntUser.
 
