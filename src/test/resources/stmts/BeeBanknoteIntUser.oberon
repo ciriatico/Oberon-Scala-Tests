@@ -7,14 +7,14 @@ TYPE
 VAR
 	banknotesValues, banknotesNeeded: intArray;
 	value, valueUserInt1, valueUserInt2: INTEGER;
-	valueUser: STRING;
+	valueUser, path: STRING;
 	i, v: INTEGER;
 
 BEGIN
 	value := 576.73;
 	i := 0;
-
-	valueUser := READFILE("src\test\resources\userInput\beecrowdint");
+	path := "src\test\resources\userInput\beecrowdint";
+	valueUser := READFILE(path);
 	
 	valueUserInt1 := STRINGTOINT(valueUser);
 	
