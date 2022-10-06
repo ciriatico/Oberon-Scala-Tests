@@ -1,9 +1,6 @@
 # Oberon Tutorial
 
-<b>Objetivo:</b> Tutorias introdutório que explique .
-
-<b>Funcionalidades implementadas até a criação deste tutorial:</b> INC, DEC, ABS, ODD, CEIL, 
-FLOOR, ROUND, INTTOFLOAT, POWER, SQRROOT, CEIL, READFILE, WRITEFILE, APPENDFILE, STRINGTOINT, STRINGTOFLOAT.
+<b>Objetivo:</b> Prover tutoriais para aprender a linguagem Oberon, com foco na prática através de testes unitários.
 
 <b>Documentação oficial da linguagem:</b> https://people.inf.ethz.ch/wirth/Oberon/Oberon07.Report.pdf
 
