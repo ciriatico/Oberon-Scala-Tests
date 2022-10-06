@@ -51,40 +51,26 @@ END
 END BeeBanknoteInt.
 ```
 
-## Problemas
+<details>
+<p>
+<summary><b><u>Teste unitário (em Scala)</u></b></summary>
+<pre>
+<code>
 
-Quando o arquivo possui apenas uma variável utilizável, como se pode ver no arquivo src\test\resources\userInput\beecrowdint a seguir:
+</code>
+</pre>
+</details>
 
-```
-100
-```
+## Funcionalidades testadas
 
-não possuimos problemas, já que é apenas uma variável, mas não queremos criar vários .txt apenas para uma variável.
+### READFILE
 
-## Possibilidades de Implementação
+Documentação já feita no teste [bee1018](bee1018.md#readfile).
 
-### Função que retorne um array de String para a implementação Oberon.
+### STRINGTOINT
 
-Uma função que retorne um array de Strings ou de Interios para o usuário tornaria ainda mais possível implementar algortimos em Oberon.
-Tentativa de código para isso em src\main\scala\br\unb\cic\oberon\stdlib\StandardLibrary.scala
+Documentação já feita no teste [bee1018](bee1018.md#stringtoint).
 
-```
- /* Tentnativa de função que retorne um array de Inteiros, 
-  def listInt = Procedure(
-    "LISTINT",
-    List(ParameterByValue("x",StringType)),
-    Some(ArrayType(2, StringType)),
-    List(),
-    List(),
-    SequenceStmt(
-      List(MetaStmt(() => ReturnStmt(ArrayValue(Value, ArrayType(2, StringType))(readf(env.lookup(name = "x").get.asInstanceOf[StringValue].value   )))))
-      
-    )
-  )
-  */
-```
-ERRO: ArrayType e ArrayValue não é bem reconhecido.
+### STRINGTOREAL
 
-### Input por meio do terminal
-
-Como outras linguagens de programação, é possível de se digitar os inputs necessários para um algortimo por meio do terminal.
+Documentação já feita no teste [bee1018](stringToReal.md#stringtoreal).
