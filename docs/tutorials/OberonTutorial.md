@@ -162,7 +162,7 @@ Lista de testes unitários feitos e documentados em forma de tutorial da linguag
     </ul>
 	<li><b><a href="./bee1042.md">bee1042</a>: Simple Sort</b></li>
     <ul>
-	    <li>FOREACH</li>
+	    <li>REPEAT</li>
     </ul>
 	<li><b><a href="./bee1049.md">bee1049</a>: Animal</b></li>
     <ul>
