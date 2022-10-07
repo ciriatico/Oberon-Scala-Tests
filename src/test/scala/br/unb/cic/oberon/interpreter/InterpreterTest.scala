@@ -838,7 +838,7 @@ class InterpreterTest extends AnyFunSuite {
     assert(interpreter.env.lookup("value") == Some(RealValue(10.5)))
   }
   // Está com ignore por causa do problema de Path de arquivos em Ubuntu ou em Windows
-  test("BeeCrowd test of INTEGER banknotes with (User Input)") {
+  ignore("BeeCrowd test of INTEGER banknotes with (User Input)") {
     val module = ScalaParser.parseResource("stmts/BeeBanknoteIntUser.oberon")
 
     assert(module.stmt.isDefined)
